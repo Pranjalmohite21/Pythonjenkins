@@ -17,9 +17,10 @@ VAL = TypeVar("VAL")
 
 
 @dataclass(slots=True)
-class _Item[KEY, VAL]:
-    key: KEY
-    val: VAL
+from typing import Generic, TypeVar
+
+K = TypeVar("K")
+V = TypeVar("V")
 
 
 class _DeletedItem(_Item):
